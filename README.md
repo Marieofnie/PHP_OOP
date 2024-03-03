@@ -6,4 +6,4 @@
 
 - run dockercompose up -d
 
-- your application should be ready at http://localhost:1111
+- your application should be ready at http://localhost:1112

@@ -32,3 +32,16 @@ services:
       MYSQL_DATABASE: ID396978_oopbooks
       MYSQL_USER: ID396978_oopbooks
       MYSQL_PASSWORD: 834G388W7F2lE7r1K838
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    platform: linux/x86_64
+    ports:
+      - 1113:80
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_USER: ID396978_oopbooks
+      MYSQL_PASSWORD: 834G388W7F2lE7r1K838
+    depends_on:
+      - db
