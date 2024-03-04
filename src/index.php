@@ -72,7 +72,7 @@ switch ($method) {
             }
         }
         if (isset($_GET['author_lastname'])) {
-            $author_lastname = $_GET['author_lastname'];
+            $author_firstname = $_GET['author_lastname'];
             $data = $book->getBookByAuthorLastName($author_lastname);
             header('Content-Type: application/json; charset=utf-8');
             if ($data !== []) {

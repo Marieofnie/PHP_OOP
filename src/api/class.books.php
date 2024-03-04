@@ -1,4 +1,6 @@
 <?php
+require __DIR__ . '/config.php';
+// require __DIR__ . '/publicconfig.php';
 class Book
 {
     private $db;
@@ -31,7 +33,7 @@ class Book
         $image_URL
     ) {
 
-        $this->db = $this->connectToDB();
+        $this->db = connectToDB();
         $this->id = $id;
         $this->title = $title;
         $this->subtitle = $subtitle;
@@ -46,26 +48,6 @@ class Book
         $this->image_URL = $image_URL;
     }
 
-
-
-    private function connectToDB()
-    {
-        $DB_HOST = "ID396978_oopbooks.db.webhosting.be";
-        $DB_USER = "ID396978_oopbooks";
-        $DB_PASSWORD = "834G388W7F2lE7r1K838";
-        $DB_DB = "ID396978_oopbooks";
-        $DB_PORT = "3306";
-
-        try {
-            $db = new PDO('mysql:host=' . $DB_HOST . '; port=' . $DB_PORT . '; dbname=' . $DB_DB, $DB_USER, $DB_PASSWORD);
-        } catch (PDOException $e) {
-            echo "Error!: " . $e->getMessage() . "<br/>";
-            die();
-        }
-        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
-
-        return $db;
-    }
     public function __destruct()
     {
     }

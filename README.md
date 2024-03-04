@@ -1,4 +1,16 @@
-# PHP OOP Opdracht
+# My Bookcase API
+
+## Database connection
+
+- use the publicconfig.php file as a template to connect to your database.
+
+- do not forget to put the
+  require **DIR** . '/publicconfig.php'; out of comments.
+
+- do not forget to put the
+  require **DIR** . '/config.php'; in comments.
+
+these two steps are necessary to use your own database.
 
 ## Local Setup
 
@@ -14,19 +26,19 @@
 
 - /books -> this endpoints provides all the books in the database.
 
-- /id -> this endpoint provides all the information for one book to which you provided the id.
+- /book/ -> this endpoint provides all the information for one book to which you provided the id.
 
-- /title -> this endpoint provides all the information for one book to which you provided the title.
+- /title/ -> this endpoint provides all the information for one book to which you provided the title.
 
-- /author_firstname -> this endpoint provides all the information for the books written by the author to which you provided the first name.
+- /firstname/ -> this endpoint provides all the information for the books written by the author to which you provided the first name.
   \*\* NOTE: when using this endpoint its not necessary to provide the complete first name you are able to search on even one letter to get all the books written by writers with that letter in their first name.
 
-- /author_lastname -> this endpoint provides all the information for the books written by the author to which you provided the last name.
+- /lastname/ -> this endpoint provides all the information for the books written by the author to which you provided the last name.
   \*\* NOTE: when using this endpoint its not necessary to provide the complete last name you are able to search on even one letter to get all the books written by writers with that letter in their last name.
 
 ### POST method
 
-- This method allows you to add a new book to the library.
+- /book/ -> This method allows you to add a new book to the library.
 
 - Use the following format to provide data.
   { "title" : "title",
@@ -51,9 +63,7 @@
 
 ### PUT method
 
-- /id
-
-  - This method allows you to edit a book in the library with the id you provided.
+- /book/ -> This method allows you to edit a book in the library with the id you provided.
 
   - Use the following format to edit data.
     { "title" : "title",
@@ -78,7 +88,6 @@
 
 ### DELETE method
 
-- /id
-  - This method allows you to delete a book in the library with the id you provided.
+- /book/ -> This method allows you to delete a book in the library with the id you provided.
 
 #### Please enjoy the api and let me know if you have any tips or tricks or adjustments

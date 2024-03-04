@@ -1,3 +1,4 @@
 /db
 /.docker
-/src/config.php
+/.git
+/src/api/config.php

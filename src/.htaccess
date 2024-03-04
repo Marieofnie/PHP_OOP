@@ -1,4 +1,25 @@
+# DirectoryIndex pdo.php
+
+Options +FollowSymLinks -MultiViews
+
+<IfModule mod_rewrite.c>
+
+# Enable mod_rewrite
 RewriteEngine On
+
+# Clean URLs for GET endpoints
+RewriteRule ^api/books$ index.php/?books [L]
+RewriteRule ^api/book/(.*)$ index.php?id=$1 [L]
+RewriteRule ^api/title/(.*)$ index.php?title=$1 [L]
+RewriteRule ^api/firstname/(.*)$ index.php?author_firstname=$1 [L]
+RewriteRule ^api/lastname/(.*)$ index.php?author_lastname=$1 [L]
+
+# Clean URLs for POST, PUT, and DELETE methods
+RewriteRule ^api/book/(.*)$ index.php?id=$1 [L]
+
+# Handle other requests (e.g., images, CSS, JS)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php [QSA,L]
+RewriteRule ^(.*)$ index.php [L]
+
+</IfModule>
