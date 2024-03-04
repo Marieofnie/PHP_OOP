@@ -175,7 +175,8 @@ class Book
     }
     public function deleteBookById($id)
     {
-        $sql = "DELETE FROM books WHERE id=:id";
+        $sql = "UPDATE `ID396978_oopbooks`.`books`
+        SET deleted = 1 WHERE id=:id";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(['id' => $id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
