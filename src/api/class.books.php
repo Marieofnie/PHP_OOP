@@ -68,7 +68,7 @@ class Book
     }
     public function getAllIds()
     {
-        $sql = "SELECT id FROM ID396978_oopbooks.books AND deleted=0";
+        $sql = "SELECT id FROM ID396978_oopbooks.books WHERE deleted=0";
         $stmt = $this->db->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
