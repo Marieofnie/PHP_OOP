@@ -18,6 +18,8 @@ these two steps are necessary to use your own database.
 
 - run dockercompose up -d
 
+- run npm i to install the used dependencies
+
 - your application should be ready at http://localhost:1111
 
 ## API endpoints
