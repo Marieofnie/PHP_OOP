@@ -24,21 +24,21 @@ these two steps are necessary to use your own database.
 
 ### GET method
 
-- /books -> this endpoints provides all the books in the database.
+- api/books -> this endpoints provides all the books in the database.
 
-- /book/ -> this endpoint provides all the information for one book to which you provided the id.
+- api/book/.. -> this endpoint provides all the information for one book to which you provided the id.
 
-- /title/ -> this endpoint provides all the information for one book to which you provided the title.
+- api/title/... -> this endpoint provides all the information for one book to which you provided the title.
 
-- /firstname/ -> this endpoint provides all the information for the books written by the author to which you provided the first name.
+- api/firstname/... -> this endpoint provides all the information for the books written by the author to which you provided the first name.
   \*\* NOTE: when using this endpoint its not necessary to provide the complete first name you are able to search on even one letter to get all the books written by writers with that letter in their first name.
 
-- /lastname/ -> this endpoint provides all the information for the books written by the author to which you provided the last name.
+- api/lastname/... -> this endpoint provides all the information for the books written by the author to which you provided the last name.
   \*\* NOTE: when using this endpoint its not necessary to provide the complete last name you are able to search on even one letter to get all the books written by writers with that letter in their last name.
 
 ### POST method
 
-- /book/ -> This method allows you to add a new book to the library.
+- api/book/... -> This method allows you to add a new book to the library.
 
 - Use the following format to provide data.
   { "title" : "title",
@@ -63,7 +63,7 @@ these two steps are necessary to use your own database.
 
 ### PUT method
 
-- /book/ -> This method allows you to edit a book in the library with the id you provided.
+- api/book/... -> This method allows you to edit a book in the library with the id you provided.
 
   - Use the following format to edit data.
     { "title" : "title",
@@ -88,6 +88,6 @@ these two steps are necessary to use your own database.
 
 ### DELETE method
 
-- /book/ -> This method allows you to delete a book in the library with the id you provided.
+- api/book/... -> This method allows you to delete a book in the library with the id you provided.
 
 #### Please enjoy the api and let me know if you have any tips or tricks or adjustments
