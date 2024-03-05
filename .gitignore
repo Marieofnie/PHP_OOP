@@ -1,4 +1,6 @@
 /db
 /.docker
 /.git
+/node_modules
+/src/dist
 /src/api/config.php

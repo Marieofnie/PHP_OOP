@@ -54,42 +54,42 @@ class Book
 
     public function getAllBooks()
     {
-        $sql = "SELECT * FROM ID396978_oopbooks.books";
+        $sql = "SELECT * FROM ID396978_oopbooks.books WHERE deleted=0";
         $stmt = $this->db->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
     public function getBookById($id)
     {
-        $sql = "SELECT * FROM ID396978_oopbooks.books WHERE id = :id";
+        $sql = "SELECT * FROM ID396978_oopbooks.books WHERE id = :id AND deleted=0";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(['id' => $id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public function getAllIds()
     {
-        $sql = "SELECT id FROM ID396978_oopbooks.books";
+        $sql = "SELECT id FROM ID396978_oopbooks.books AND deleted=0";
         $stmt = $this->db->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public function getBookByTitel($title)
     {
-        $sql = "SELECT * FROM ID396978_oopbooks.books WHERE title LIKE CONCAT('%', :title, '%')";
+        $sql = "SELECT * FROM ID396978_oopbooks.books WHERE title LIKE CONCAT('%', :title, '%') AND deleted=0";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(['title' => $title]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public function getBookByAuthorFirstName($author_firstname)
     {
-        $sql = "SELECT * FROM ID396978_oopbooks.books WHERE author_firstname LIKE CONCAT('%', :author_firstname, '%')";
+        $sql = "SELECT * FROM ID396978_oopbooks.books WHERE author_firstname LIKE CONCAT('%', :author_firstname, '%') AND deleted=0";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(['author_firstname' => $author_firstname]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public function getBookByAuthorLastName($author_lastname)
     {
-        $sql = "SELECT * FROM ID396978_oopbooks.books WHERE author_lastname LIKE CONCAT('%', :author_lastname, '%')";
+        $sql = "SELECT * FROM ID396978_oopbooks.books WHERE author_lastname LIKE CONCAT('%', :author_lastname, '%') AND deleted=0";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(['author_lastname' => $author_lastname]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
