@@ -29,9 +29,9 @@ services:
       - ./db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
-      MYSQL_DATABASE: ID396978_oopbooks
-      MYSQL_USER: ID396978_oopbooks
-      MYSQL_PASSWORD: 834G388W7F2lE7r1K838
+      MYSQL_DATABASE: oopbooks
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
@@ -41,7 +41,7 @@ services:
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: rootpass
-      MYSQL_USER: ID396978_oopbooks
-      MYSQL_PASSWORD: 834G388W7F2lE7r1K838
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
     depends_on:
       - db
